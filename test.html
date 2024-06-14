@@ -1,84 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/322affab49.js" crossorigin="anonymous"></script>
-    <title>Try it</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-sm bg-body-tertiary shadow-sm">
-        <div class="container-fluid">
-            <div class="align-items-center d-flex">
-                <a class="navbar-brand" href=""><img src="/img/Facebook_Logo_Primary.png" width="37px" height="37px"></a>
-                <div class="search-box" role="search">
-                    <input class="rounded-pill form-control me-2" type="search" placeholder="Search Facebook" aria-label="Search">
-                </div>
-            </div>
-            <div class="d-flex">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link active " href="#"><button class="btn rounded"><i class="fa-solid fa-house fa-xl" style="color: #757575;"></i></button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-user-group fa-lg" style="color: #757575;"></i></button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-brands fa-youtube fa-lg" style="color: #757575;"></i></button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-store fa-lg" style="color: #757575;"></i></button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-users-line fa-lg" style="color: #737373;"></i></button></a>
-                    </li>
-                  </ul>
-            </div>
-            <div class="d-flex">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link active " href="#"><button class="btn rounded"><i class="fa-solid fa-house fa-xl" style="color: #757575;"></i></button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-user-group fa-lg" style="color: #757575;"></i></button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-brands fa-youtube fa-lg" style="color: #757575;"></i></button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-store fa-lg" style="color: #757575;"></i></button></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-users-line fa-lg" style="color: #737373;"></i></button></a>
-                    </li>
-                  </ul>
-            </div>
+<html>
+  <head>
+    <style>
+      .scrollable-element {
+        overflow-y: scroll;
+        height: 32rem;
+        font-size: 6.25rem;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scrollable-element">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+      <div>Item 5</div>
+      <div>Item 6</div>
+      <div>Item 7</div>
+      <div>Item 8</div>
+      <div>Item 9</div>
+      <div>Item 10</div>
+    </div>
+    <script>
+      function ensureDocumentIsScrollable() {
+        const isScrollable =
+          document.documentElement.scrollHeight > window.innerHeight;
+        if (!isScrollable) {
+          document.documentElement.style.setProperty(
+            "height",
+            "calc(100vh + 1px)",
+            "important"
+          );
+        }
+      }
+      function preventCollapse() {
+        if (window.scrollY === 0) {
+          window.scrollTo(0, 1);
+        }
+      }
 
+      const scrollableElement = document.querySelector(".scrollable-element");
+      scrollableElement.addEventListener("touchstart", preventCollapse);
 
-            <!--<ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link active " href="#"><button class="btn rounded"><i class="fa-solid fa-house fa-xl" style="color: #757575;"></i></button></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-user-group fa-lg" style="color: #757575;"></i></button></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-brands fa-youtube fa-lg" style="color: #757575;"></i></button></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-store fa-lg" style="color: #757575;"></i></button></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><button class="btn rounded"><i class="fa-solid fa-users-line fa-lg" style="color: #737373;"></i></button></a>
-              </li>
-            </ul>-->
-            
-          </div>
-        </div>
-      </nav>
-
-    <script src="/js/bootstrap.min.js"></script>
-</body>
+      window.addEventListener("load", ensureDocumentIsScrollable);
+    </script>
+  </body>
 </html>
